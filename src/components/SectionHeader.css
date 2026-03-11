@@ -1,0 +1,9 @@
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+.section-num { font-size: 0.65rem; color: var(--accent); letter-spacing: 0.15em; font-weight: 500; }
+.section-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text); }
+.section-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }

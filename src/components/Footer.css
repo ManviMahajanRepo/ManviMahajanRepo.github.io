@@ -1,0 +1,11 @@
+.footer {
+  padding: 1.5rem 3rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.footer .accent { color: var(--accent); }
+@media (max-width: 768px) { .footer { flex-direction: column; gap: 0.5rem; text-align: center; } }

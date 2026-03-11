@@ -1,0 +1,30 @@
+.about { background: var(--surface); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 1000px;
+}
+
+.about-text p { color: var(--muted); font-size: 0.88rem; line-height: 1.9; margin-bottom: 1.2rem; }
+.about-text .hl { color: var(--text); }
+
+.terminal-box { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.terminal-bar { background: var(--surface2); padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.4rem; border-bottom: 1px solid var(--border); }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot-r { background: #ff5f57; } .dot-y { background: #febc2e; } .dot-g { background: #28c840; }
+.terminal-title { margin-left: auto; font-size: 0.65rem; color: var(--muted); }
+
+.terminal-body { padding: 1.2rem 1.5rem; }
+.t-line { display: flex; margin-bottom: 0.4rem; font-size: 0.78rem; }
+.t-prompt { color: var(--accent); }
+.t-cmd { color: var(--text); }
+.t-out { color: var(--muted); margin-left: 1rem; }
+.t-out.green { color: #28c840; }
+.t-out.gold  { color: var(--accent3); }
+.t-out.purple { color: var(--accent); }
+.cursor { display: inline-block; width: 8px; height: 14px; background: var(--accent); animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 4px; }
+
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } }
