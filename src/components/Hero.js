@@ -39,7 +39,7 @@ function Hero() {
         <div className="hero-photo-ring" />
         <div className="hero-photo-frame">
           <img
-            src="profile.jpg"
+            src={`${process.env.PUBLIC_URL}/profile.jpg`}
             alt="Manvi"
             className="hero-photo-img"
             onError={e => {
