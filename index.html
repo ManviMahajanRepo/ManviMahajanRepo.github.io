@@ -11,9 +11,9 @@
     --surface: #0f0f1a;
     --surface2: #14141f;
     --border: #1e1e2e;
-    --accent: #00ffa3;
-    --accent2: #7c3aed;
-    --accent3: #06b6d4;
+    --accent: #c084fc;
+    --accent2: #9333ea;
+    --accent3: #f59e0b;
     --text: #e2e8f0;
     --muted: #64748b;
     --dim: #1e293b;
@@ -117,8 +117,8 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(0,255,163,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,255,163,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(192,132,252,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(192,132,252,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
   }
@@ -128,7 +128,7 @@
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,255,163,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(192,132,252,0.08) 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -213,7 +213,7 @@
     color: #0a0a0f;
     font-weight: 700;
   }
-  .btn-primary:hover { background: #00e090; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,255,163,0.3); }
+  .btn-primary:hover { background: #a855f7; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,132,252,0.3); }
 
   .btn-ghost {
     background: transparent;
@@ -379,7 +379,7 @@
     transition: transform 0.3s;
   }
 
-  .skill-card:hover { border-color: rgba(0,255,163,0.3); transform: translateY(-3px); }
+  .skill-card:hover { border-color: rgba(192,132,252,0.3); transform: translateY(-3px); }
   .skill-card:hover::before { transform: scaleX(1); }
 
   .skill-cat {
@@ -490,12 +490,12 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 80px;
-    background: linear-gradient(transparent, rgba(0,255,163,0.04));
+    background: linear-gradient(transparent, rgba(192,132,252,0.04));
     opacity: 0;
     transition: opacity 0.3s;
   }
 
-  .project-card:hover { border-color: rgba(0,255,163,0.3); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .project-card:hover { border-color: rgba(192,132,252,0.3); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
   .project-card:hover::after { opacity: 1; }
 
   .project-top {
@@ -546,8 +546,8 @@
   .stack-tag {
     font-size: 0.65rem;
     padding: 0.2rem 0.5rem;
-    background: rgba(0,255,163,0.07);
-    border: 1px solid rgba(0,255,163,0.2);
+    background: rgba(192,132,252,0.07);
+    border: 1px solid rgba(192,132,252,0.2);
     color: var(--accent);
     border-radius: 2px;
   }
@@ -650,7 +650,7 @@
     resize: vertical;
   }
 
-  input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,255,163,0.1); }
+  input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(192,132,252,0.1); }
   textarea { min-height: 120px; }
 
   .form-submit {
@@ -679,6 +679,14 @@
   }
   .social-link:hover { color: var(--accent); border-color: var(--accent); }
 
+  .empowerment-note {
+    margin-top: 1.5rem;
+    font-size: 0.78rem;
+    color: var(--accent3);
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+
   /* ─── FOOTER ─── */
   footer {
     padding: 1.5rem 3rem;
@@ -691,6 +699,78 @@
   }
 
   footer .accent { color: var(--accent); }
+
+  /* ─── HERO PHOTO ─── */
+  .hero-photo-wrap {
+    position: absolute;
+    right: 10rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-photo-ring {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--accent), var(--accent3)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    animation: spin 8s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .hero-photo-frame {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--border);
+    background: var(--surface2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--surface2);
+  }
+
+  .placeholder-icon { font-size: 2.5rem; }
+
+  .placeholder-text {
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-photo-wrap { display: none; }
+  }
 
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
@@ -761,6 +841,18 @@
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">↓ See My Work</a>
       <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-photo-wrap reveal">
+    <div class="hero-photo-ring"></div>
+    <div class="hero-photo-frame">
+      <img src="profile.jpg" alt="Manvi" class="hero-photo-img"
+           onerror="this.style.display='none'; this.parentElement.querySelector('.hero-photo-placeholder').style.display='flex';" />
+      <div class="hero-photo-placeholder">
+        <span class="placeholder-icon">👩‍💻</span>
+        <span class="placeholder-text">Add profile.jpg<br/>to your repo</span>
+      </div>
     </div>
   </div>
   <div class="hero-stats">
@@ -1061,18 +1153,20 @@
     <div class="social-links">
       <a href="https://github.com" class="social-link" target="_blank">⌥ GitHub</a>
       <a href="https://linkedin.com" class="social-link" target="_blank">⌥ LinkedIn</a>
+      <a href="https://leetcode.com" class="social-link" target="_blank">⌥ LeetCode</a>
       <a href="mailto:your@email.com" class="social-link">⌥ Email</a>
     </div>
+    <p class="empowerment-note">💜 Proud woman in tech — building the future, one commit at a time.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <span>built by <span class="accent">manvi</span> · 2025</span>
-  <span>designed with intention &amp; <span class="accent">♥</span></span>
+  <span>💜 women in tech · built with intention</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1111,10 +1205,4 @@
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    glow.style.left = x + 'px';
-    glow.style.top = y + 'px';
-    glow.style.transform = 'translate(-50%, -50%)';
-  });
-</script>
-</body>
-</html>
+  
